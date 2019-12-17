@@ -81,21 +81,19 @@ console.log(getName)
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(name) {
   /* code here */function makeSmartPerson(name) {
-  const smartPerson= {
+  return {
     name: name,
     sum: function(num1, num2){
       return num1 + num2;
     },
+
     speak: function(){
       return `Hello, my name is ${name}`;
     }
   }
-  return smartPerson;
-}
-}
-
+console.log(makeSmartPerson)
 
 
 
@@ -157,7 +155,7 @@ function get3rdCar(inventory) {
 function getCarInfoByIndex(inventory, index) {
   /* code here */
   return `This is a ${inventory[index].carmake} ${inventory[index].carmodel}`
-
+console.log(getCarInfoByIndex)
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -174,7 +172,7 @@ function getLastCarInfo(inventory) {
   return `This is a ${.carmake} ${inventory[index].carmodel} `
   /* code here */
 }
-
+console.log(getLastCarInfo)
 /**
  * ### Challenge `getCarInfoById`
  * 
@@ -196,6 +194,7 @@ function getCarInfoById(inventory, id) {
 }
 return `This is a ${inventory[id].carmake} ${inventory[id].carmodel}`
 }
+console.log(getCarInfoById)
 
 /**
  * ### Challenge `sortCarInventory`
@@ -234,14 +233,17 @@ function getModelYears(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(inventory) {
-  let year = []
+function getOlderCars(inventory, year) {
+  let newArr = [];
   for(let i = 0; i < inventory.length; i++){
-    year.push (inventory[i]).car_year)
+    if (inventory[i].car_year <=year) {
+    newArr.push (inventory[i]);
+  }
 }
-return year; {
+return newArr; {
 
 }
+console.log(getOlderCars(inventory, 1983));
 
 /**
  * ### Challenge `getGermanCars`
@@ -258,31 +260,31 @@ function getGermanCars(/* code here */) {
   /* code here */
   for (let i = 0; i < inventory.length; i++ {
     let newArray = [];
-    if (inventory[i].car.make == "Audi")
+    if (inventory[i].car_make == "Audi" || inventory[i].car_make == "Mercedes-Benz" || inventory.[i].car_make == "Volkswagen" || inventory.[i].car_make == BMW)
+      newArray.push(inventory[i]);
+    )
   }
+  return newArray;
 }
-
+}
+console.log(getGermanCars(inventory));
 /**
  * ### Challenge refactor to arrow functions
  * 
  * @instructions
  * Create arrow function versions of the following commented-out functions:
  * 
- * const sum = function (a, b) {
- *   return a + b
- * }
+ * const sum = function (a, b) => a + b
  * 
- * const addFive = function(num) {
-*    return num + 5
- * }
+ * 
+ * const addFive = function(num) => num + 5
  *
- * const argTimesTwo = function (num) {
- *   return num * 2
- * }
+ * const argTimesTwo = function (num) => return num * 2
+ * 
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum => function (a, b) => a + b;
+const addFive => function(num) => num + 5;
+const argTimesTwo => function (num) => return num * 2
 
 /**
  * ### Challenge `carMaker`
