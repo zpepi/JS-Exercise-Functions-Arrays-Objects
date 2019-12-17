@@ -25,23 +25,31 @@ function addNumbers(num1, num2) {
 
 /**
  * ### Challenge `makePersonObject`
- * 
- * @instructions
- * This function should take an id, a name and an email as arguments,
- * and return an object with `id`, `name` and `email` properties.
- * 
- * For example, if we invoke `makePersonObject`
- * passing 5, 'Leia' and 'leia@leia.com' as arguments,
- * the returned value should look like:
- * {
- *   id: 5,
- *   name: "Leia",
- *   email: "leia@leia.com",
- * }
-*/
-function makePersonObject(/* code here */) {
-  /* code here */
+ * @instructions This function should take an id, a name and an email as arguments,
+and return an object with `id`, `name` and `email` properties.
+
+For example, if we invoke `makePersonObject`
+passing 5, 'Leia' and 'leia
+ * @leia .com' as arguments,
+the returned value should look like:
+{
+id: 5,
+name: "Leia",
+email: "leia
+ * @leia .com",
 }
+ * @param {any} id
+ * @param {any} name
+ * @param {any} email
+ */
+
+function makePersonObject(id, name, email) {
+  return { id, name, email };
+};
+
+console.log(makePersonObject(1, 'Baby Yoda', 'baby@yoda.com'));
+
+  /* code here
 
 /**
  * ### Challenge `getName`
@@ -56,9 +64,9 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
-}
+function getName(object) {
+  return `hello my name is ${object.name}`;
+console.log(getName)
 
 /**
  * ### Challenge `makeSmartPerson`
@@ -74,7 +82,18 @@ function getName(/* code here */) {
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
 function makeSmartPerson(/* code here */) {
-  /* code here */
+  /* code here */function makeSmartPerson(name) {
+  const smartPerson= {
+    name: name,
+    sum: function(num1, num2){
+      return num1 + num2;
+    },
+    speak: function(){
+      return `Hello, my name is ${name}`;
+    }
+  }
+  return smartPerson;
+}
 }
 
 
@@ -137,7 +156,8 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
-}
+  return `This is a ${inventory[index].carmake} ${inventory[index].carmodel}`
+
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -150,7 +170,8 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
+function getLastCarInfo(inventory) {
+  return `This is a ${.carmake} ${inventory[index].carmodel} `
   /* code here */
 }
 
@@ -166,8 +187,14 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(inventory, id) {
+  const index = function(){
+    for (let i = 0; i < array.length; i++)
+    if (array[i].id === id)
+    return i;
+  }
+}
+return `This is a ${inventory[id].carmake} ${inventory[id].carmodel}`
 }
 
 /**
@@ -207,8 +234,13 @@ function getModelYears(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(inventory) {
+  let year = []
+  for(let i = 0; i < inventory.length; i++){
+    year.push (inventory[i]).car_year)
+}
+return year; {
+
 }
 
 /**
@@ -224,6 +256,10 @@ function getOlderCars(/* code here */) {
 */
 function getGermanCars(/* code here */) {
   /* code here */
+  for (let i = 0; i < inventory.length; i++ {
+    let newArray = [];
+    if (inventory[i].car.make == "Audi")
+  }
 }
 
 /**
@@ -261,9 +297,8 @@ const argTimesTwo = null; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
+function carMaker(/* code here */) 
   /* code here */
-}
 
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
