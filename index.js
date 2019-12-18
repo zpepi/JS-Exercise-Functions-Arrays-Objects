@@ -187,14 +187,14 @@ console.log(getLastCarInfo)
 */
 function getCarInfoById(inventory, id) {
   const index = function(){
-    for (let i = 0; i < array.length; i++)
-    if (array[i].id === id)
+    for (let i = 0; i < index.length; i++)
+    if (index[i].id === id)
     return i;
   }
 }
 return `This is a ${inventory[id].carmake} ${inventory[id].carmodel}`
 }
-console.log(getCarInfoById)
+
 
 /**
  * ### Challenge `sortCarInventory`
@@ -204,8 +204,8 @@ console.log(getCarInfoById)
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
+function sortCarInventory(inventory) {
+  return inventory.sort((a, b)=>((a.car_model > b.car_model) ? 1 : (a.car_model < b.car_model) ? -1 : 0))
 }
 
 /**
@@ -217,8 +217,13 @@ function sortCarInventory(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(inventory)
+ {
+   let year = [];
+   for(let i = 0; i < inventory.length; i++){
+     year.push (inventory[i].car_year)
+   }
+   return year;
 }
 
 /**
@@ -241,8 +246,8 @@ function getOlderCars(inventory, year) {
   }
 }
 return newArr; {
-
 }
+
 console.log(getOlderCars(inventory, 1983));
 
 /**
@@ -256,7 +261,7 @@ console.log(getOlderCars(inventory, 1983));
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
+function getGermanCars(inventory) {
   /* code here */
   for (let i = 0; i < inventory.length; i++ {
     let newArray = [];
@@ -282,9 +287,9 @@ console.log(getGermanCars(inventory));
  * const argTimesTwo = function (num) => return num * 2
  * 
 */
-const sum => function (a, b) => a + b;
-const addFive => function(num) => num + 5;
-const argTimesTwo => function (num) => return num * 2
+const sum = (a, b) => a + b;
+const addFive = num => num + 5;
+const argTimesTwo = num => num * 2
 
 /**
  * ### Challenge `carMaker`
